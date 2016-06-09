@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>The Code Nut</title>
-    	<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>The Code Nut</title>
+		<link rel="stylesheet" type="text/css" href="css/custom.css">	  
 	</head>
 	<body>
 		<h1>Java </h1>
-		<h2>Polymorphism (subtype) vs Inheritance(subclass)</h2>
-		<p>subclass is <span class="answer">inheritance</span> + <span class="answer"> subtyping </span></p>
-		<p><strong>Inheritance:</strong>
+		<input type="button" value="Show/Hide" id="keywordButton">
+		<hr>
+		<p>This section quickly summarizes some major Java concepts. Each section has a short introductory explanation,
+			followed by bullet points with what I believe to be the key ideas. It is assumed the reader is familiar with
+			these concepts, as the purpose is to refresh the mind of the reader rather than teach them new material.</p>
+
+		<p>To help with remembering, some keywords will be hidden, you can simply click or tap the text to reveal the
+			important keyword(s). e.g. There are <span class="answer">eight</span> bits in a byte. You can also
+			disable/enable all the hidden words by tapping the button at the top right</p>
+		
+		<hr>
+		
+		<h2>Polymorphism (subtype) vs Inheritance (subclass)</h2>
+		<p>Inheritance (<span class="terminology">subclassing</span>) is the process where one class 
+			acquires the properties (methods and instance variables) of another. Polymorphism 
+			(<span class="terminology">subtyping</span>) is the ability to use subtypes in place of supertypes.</p>
+		<p>subclass is both <span class="answer">inheritance</span> + <span class="answer"> subtyping </span></p>
+		
+		<p><strong>Inheritance</strong>
 		<ul>
+			<li>Code reuse</li>		
 			<li>can't get inheritance without subtyping</li>
-			<li>Code reuse.</li>
 			<li>IS-A Relationship.</li>
+			<li>e.g. <pre> class Dog extends Animal </pre> will acquire all methods and instance variables of Animal
 		</ul>
-		<p><strong>Polymorphism:</strong>
+		
+		<p><strong>Polymorphism</strong>
 		<ul>
 			<li>literaly translate to "having many forms"</li>
 			<li>When you define a supertype for a group of classes, <strong> any subclass of that supertype can be 
@@ -56,9 +74,10 @@
 		<p>Unchecked Exceptions</p>
 		<ul>
 			<li>extend runtime exceptions for this</li>
-			<li></li>
 		</ul>
+
   		<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 		<script src="js/custom.js"> </script>
+
 	</body>
 </html>

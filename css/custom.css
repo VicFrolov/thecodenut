@@ -7,3 +7,19 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+p, li {
+	max-width: 1000px;
+}
+hr {
+	margin-left: 0px;
+	max-width: 1000px
+}
+
+pre {
+	display: inline;
+}
+
+body {
+    font-family: "Arial", Helvetica, monospace;
+}
