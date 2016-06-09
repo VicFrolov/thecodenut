@@ -8,6 +8,11 @@ main {
     flex: 1 0 auto;
 }
 
+#content ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
 /*GENERAL TEXT MANIPULATION*/
 
 .emphasize {
@@ -48,7 +53,6 @@ main {
         margin-right: -10px;
         line-height: 10px;
         letter-spacing: 2px;
-
     }    
 }
 
@@ -58,9 +62,7 @@ main {
         line-height: 10px;
         font-size: 10px;
         letter-spacing: 2px;
-
     }
-
 }
 
 .brand-logo {

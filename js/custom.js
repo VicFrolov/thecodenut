@@ -4,8 +4,21 @@ $(document).ready (function () {
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
 
-    $("#keywordButton").click(function () {
+    var loadNavbar = function () {
+        $.ajax({
+            url: "../navbar/navbar.html", 
+            success: function(data) {
+                $("#navbar-placeholder").html(data);
+                $(".button-collapse").sideNav();
+            }
+        });
+    };
+
+    loadNavbar();
+
+    $(document).on('click', '#keywordButton', function () {
         if (showAnswersButton) {
+            $(this).val("Show Answers");
             $(".answer").css("color", toggleColorNotVisible);
             $(".answer").css("background-color", toggleColorNotVisible);
             $(".answer").each(function () {
@@ -13,6 +26,7 @@ $(document).ready (function () {
             });
 
         } else {
+            $(this).val("Hide Answers");
             $(".answer").css("color", toggleColorVisible);
             $(".answer").css("background-color", backgroundColorVisible);
             $(".answer").each(function () {
@@ -22,8 +36,7 @@ $(document).ready (function () {
         showAnswersButton = !showAnswersButton;        
     });
 
-    $(".answer").click(function () {
-    	console.log("LOL")
+    $(document).on('click', '.answer', function () {
         this.hideAnswers = this.hideAnswers || false;
 
         if (this.hideAnswers) {
@@ -37,11 +50,14 @@ $(document).ready (function () {
         this.hideAnswers = !this.hideAnswers;      
     });
 
-    $(".button-collapse").sideNav();
-    $("#navbar-placeholder").load('../navbar/navbar.html');
-
-    $("#javaCheatSheet").on("click", function () {
-    	$("#java-cheatsheet-placeholder").load('../java-cheatsheet/javaSummary2.html');
-    	$("#index-banner").hide();
+    $("#javaCheatSheet").on('click', function () {
+        $.ajax({
+            url: "../java-cheatsheet/javaSummary2.html", 
+            success: function(data) {
+                $("#java-cheatsheet-placeholder").html(data);
+                $("#index-banner").hide();
+            }
+        });
     });
-})
+
+});
