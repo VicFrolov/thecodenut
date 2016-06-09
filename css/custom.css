@@ -43,6 +43,14 @@ main {
     text-align: center;
 }
 
+.card .card-content > p {
+    color: #ffffff;
+}
+
+
+.btn, .btn-large {
+    color: #0089ec;
+}
 /*END GENERAL TEXT MANIPULATION*/
 
 /*NAVBAR STUFF*/
