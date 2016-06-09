@@ -38,6 +38,11 @@ main {
     opacity: 0.9;
 }
 
+
+.homepage-cards {
+    text-align: center;
+}
+
 /*END GENERAL TEXT MANIPULATION*/
 
 /*NAVBAR STUFF*/
