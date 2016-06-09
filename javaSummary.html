@@ -1,83 +1,99 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>The Code Nut</title>
-		<link rel="stylesheet" type="text/css" href="css/custom.css">	  
-	</head>
-	<body>
-		<h1>Java </h1>
-		<input type="button" value="Show/Hide" id="keywordButton">
-		<hr>
-		<p>This section quickly summarizes some major Java concepts. Each section has a short introductory explanation,
-			followed by bullet points with what I believe to be the key ideas. It is assumed the reader is familiar with
-			these concepts, as the purpose is to refresh the mind of the reader rather than teach them new material.</p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Code Nut</title>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">   
+  </head>
+  <body>
+    <h1>Java Cheat Sheet </h1>
+    <input type="button" value="Show/Hide Keywords" id="keywordButton">
+    <hr>
+    <h2> Intro </h2>
+    <p> This section quickly summarizes some major Java concepts. Each section has a short introductory explanation,
+      followed by bullet points with what I believe to be the key ideas. It is assumed the reader is familiar with
+      these concepts, as the purpose is to refresh the mind of the reader rather than teach them new material.</p>
 
-		<p>To help with remembering, some keywords will be hidden, you can simply click or tap the text to reveal the
-			important keyword(s). e.g. There are <span class="answer">eight</span> bits in a byte. You can also
-			disable/enable all the hidden words by tapping the button at the top right</p>
-		
-		<hr>
-		
-		<h2>Polymorphism (subtype) vs Inheritance (subclass)</h2>
-		<p>Inheritance (<span class="terminology">subclassing</span>) is the process where one class 
-			acquires the properties (methods and instance variables) of another. Polymorphism 
-			(<span class="terminology">subtyping</span>) is the ability to use subtypes in place of supertypes.</p>
-		<p>subclass is both <span class="answer">inheritance</span> + <span class="answer"> subtyping </span></p>
-		
-		<p><strong>Inheritance</strong>
-		<ul>
-			<li>Code reuse</li>		
-			<li>can't get inheritance without subtyping</li>
-			<li>IS-A Relationship.</li>
-			<li>e.g. <pre> class Dog extends Animal </pre> will acquire all methods and instance variables of Animal
-		</ul>
-		
-		<p><strong>Polymorphism</strong>
-		<ul>
-			<li>literaly translate to "having many forms"</li>
-			<li>When you define a supertype for a group of classes, <strong> any subclass of that supertype can be 
-				substituted where the supertype is expected</strong></li>
-			<li>Can be considered a subclass. i.e. Animal myDog = new Dog() || new Cat()</li>
-			<li>Allows for polymorphic arrays! </li>
-			<li>Allows for polymorphic arguments and return types! </li>
-		</ul>
+    <p> To help with remembering, some keywords will be hidden, you can simply click or tap the box to reveal the
+      important keyword(s). e.g. There are <span class="answer">eight</span> bits in a byte. You can also
+      disable/enable all the hidden words by tapping the button at the top right</p>
+    
+    <hr>
 
-		<h2>Override vs Overload</h2>
-		<p><strong>Overriding </strong>
-		<ul>
-			<li> is when a derived class requires a different definition of an inherited method</li>
-			<li> Arguments must be the same, and return must be the same </li>
-			<li> Method can't be less accessible </li>
-		</ul>		
-		<p><strong> Overloading </strong> is when you have the same method name, but have either different number of arguments, or different types of arguments </p>
-		<ul>
-			<li> Has nothing to do with inheritance or polymorphism</li>
-			<li> just changing the return type will cause an error and is NOT overloading </li>
-		</ul>
+    <h2> General </h2>
+    <p> Java is an Object-Oriented Programming (OOP) language, that is <span class="answer">statically</span> 
+      scoped, and <span class="answer">statically</span> typed. </p>
 
-		<h2> Big-O notation, and algorithm complexity </h2>
-		<p>Big-O is what we use to derive how long an algorithm takes to run. Big-O is how quickly it grows relative to the input, as the input gets arbitrarily large. </p>
-		<p>DATA STRUCTURES: tree, arraylist, array, stack, dictionary, map (hashmap, hashtree), 
+    <h4> Java Platform </h4>
+    <p> All programs written in the Java language rely on the set of predefined classes that comprise the Java 
+      platform. Java classes are organized into related groups known as packages. The Java platform defines 
+      packages for functionality such as input/output, networking, graphics, user-interface creation, security, 
+      and much more. (Source page 2 java in a nutshell) </p>
+    
+    <hr>
 
-		<h2> Exceptions </h2>
-		<p>If a client can reasonably be expected to recover from an exception, make it a checked exception. If a client cannot do anything to recover from the exception, make it an unchecked exception</p>
-		<p>Checked Exceptions</p>
-		<ul>
-			<li>extend Exceptions for this </li>
-			<li>Give us reliable checked documentation about which exceptions might be thrown, and therefore
-				which exceptions definitely will not be thrown!</li>
-			<li>if method has checked exception in signature, try catch is not necessary</li>
-		</ul>
+    <h2>Polymorphism (subtype) vs Inheritance (subclass)</h2>
+    <p>Inheritance (<span class="answer">subclassing</span>) is the process where one class 
+      acquires the properties (methods and instance variables) of another by <span class="terminology">extending
+      </span> it. Polymorphism (<span class="answer">subtyping</span>) is the ability to use subtypes in place of 
+      supertypes. Subclassing is both <span class="answer">inheritance</span> + <span class="answer"> subtyping 
+      </span>.</p>
+    
+    <p><strong>Inheritance</strong>
+    <ul>
+      <li>Allows for code reuse.</li>   
+      <li>Can't get inheritance without <span class="answer">subtyping</span>.</li>
+      <li><span class="answer">IS-A</span> Relationship.</li>
+      <li>e.g. <pre> class Dog extends Animal </pre> will acquire all methods and instance variables of 
+        <pre>Animal. Dog</pre> <span class="terminology"> IS-A </span> <pre>Animal</pre>. </li>
+    </ul>
+    
+    <p><strong>Polymorphism</strong>
+    <ul>
+      <li>literaly translate to "having many forms"</li>
+      <li>When you define a supertype for a group of classes, <strong> any subclass of that supertype can be 
+        substituted where the supertype is expected</strong></li>
+      <li>Can be considered a subclass. i.e. Animal myDog = new Dog() || new Cat()</li>
+      <li>Allows for polymorphic arrays! </li>
+      <li>Allows for polymorphic arguments and return types! </li>
+    </ul>
 
-		<p>Unchecked Exceptions</p>
-		<ul>
-			<li>extend runtime exceptions for this</li>
-		</ul>
+    <hr>
 
-  		<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-		<script src="js/custom.js"> </script>
+    <h2>Override vs Overload</h2>
+    <p><strong>Overriding </strong>
+    <ul>
+      <li> is when a derived class requires a different definition of an inherited method</li>
+      <li> Arguments must be the same, and return must be the same </li>
+      <li> Method can't be less accessible </li>
+    </ul>   
+    <p><strong> Overloading </strong> is when you have the same method name, but have either different number of arguments, or different types of arguments </p>
+    <ul>
+      <li> Has nothing to do with inheritance or polymorphism</li>
+      <li> just changing the return type will cause an error and is NOT overloading </li>
+    </ul>
 
-	</body>
+    <h2> Big-O notation, and algorithm complexity </h2>
+    <p>Big-O is what we use to derive how long an algorithm takes to run. Big-O is how quickly it grows relative to the input, as the input gets arbitrarily large. </p>
+    <p>DATA STRUCTURES: tree, arraylist, array, stack, dictionary, map (hashmap, hashtree), 
+
+    <h2> Exceptions </h2>
+    <p>If a client can reasonably be expected to recover from an exception, make it a checked exception. If a client cannot do anything to recover from the exception, make it an unchecked exception</p>
+    <p>Checked Exceptions</p>
+    <ul>
+      <li>extend Exceptions for this </li>
+      <li>Give us reliable checked documentation about which exceptions might be thrown, and therefore
+        which exceptions definitely will not be thrown!</li>
+      <li>if method has checked exception in signature, try catch is not necessary</li>
+    </ul>
+
+    <p>Unchecked Exceptions</p>
+    <ul>
+      <li>extend runtime exceptions for this</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="js/custom.js"> </script>
+  </body>
 </html>
