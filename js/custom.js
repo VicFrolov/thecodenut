@@ -1,24 +1,31 @@
 $(document).ready (function () {
-    var toggleColorNotVisible = "rgb(255, 0, 0)";
+    var toggleColorNotVisible = "rgb(0, 0, 0)";
     var toggleColorVisible = "rgb(0, 0, 0)";
     var backgroundColorVisible = "rgb(255, 255, 255)";
-    var showAnswers = false;
     var showAnswersButton = false;
 
     $("#keywordButton").click(function () {
         if (showAnswersButton) {
             $(".answer").css("color", toggleColorNotVisible);
             $(".answer").css("background-color", toggleColorNotVisible);
+            $(".answer").each(function () {
+                this.hideAnswers = false;
+            });
+
         } else {
             $(".answer").css("color", toggleColorVisible);
             $(".answer").css("background-color", backgroundColorVisible);
-
+            $(".answer").each(function () {
+                this.hideAnswers = true;
+            });
         }
-        showAnswersButton = !showAnswersButton;
+        showAnswersButton = !showAnswersButton;        
     });
 
     $(".answer").click(function () {
-        if (showAnswers) {
+        this.hideAnswers = this.hideAnswers || false;
+
+        if (this.hideAnswers) {
             $(this).css("color", toggleColorNotVisible);
             $(this).css("background-color", toggleColorNotVisible);
         } else {
@@ -26,7 +33,7 @@ $(document).ready (function () {
             $(this).css("background-color", backgroundColorVisible);
 
         }
-        showAnswers = !showAnswers;
+        this.hideAnswers = !this.hideAnswers;      
     });
     
 })
