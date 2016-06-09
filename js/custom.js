@@ -51,13 +51,8 @@ $(document).ready (function () {
     });
 
     $("#javaCheatSheet").on('click', function () {
-        $.ajax({
-            url: "../java-cheatsheet/javaSummary2.html", 
-            success: function(data) {
-                $("#java-cheatsheet-placeholder").html(data);
-                $("#index-banner").hide();
-            }
-        });
+        $("#java-cheatsheet-placeholder").load("../java-cheatsheet/javaSummary2.html");
+        $("#index-banner").hide();
     });
 
 });
