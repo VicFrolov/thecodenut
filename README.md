@@ -1,2 +1,0 @@
-# thecodenut
-coder's blog

@@ -1,5 +1,5 @@
 $(document).ready (function () {
-    var toggleColorNotVisible = "rgb(0, 0, 0)";
+	var toggleColorNotVisible = "rgb(0, 0, 0)";
     var toggleColorVisible = "rgb(0, 0, 0)";
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
@@ -23,6 +23,7 @@ $(document).ready (function () {
     });
 
     $(".answer").click(function () {
+    	console.log("LOL")
         this.hideAnswers = this.hideAnswers || false;
 
         if (this.hideAnswers) {
@@ -35,5 +36,12 @@ $(document).ready (function () {
         }
         this.hideAnswers = !this.hideAnswers;      
     });
-    
+
+    $(".button-collapse").sideNav();
+    $("#navbar-placeholder").load('../navbar/navbar.html');
+
+    $("#javaCheatSheet").on("click", function () {
+    	$("#java-cheatsheet-placeholder").load('../java-cheatsheet/javaSummary2.html');
+    	$("#index-banner").hide();
+    });
 })

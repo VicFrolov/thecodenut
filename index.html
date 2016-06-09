@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Code Nut</title>
+  <head>
+    <meta charset="UTF-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Cheeki </title>
+  </head>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-</head>
-<body>
+  <body>
+    <header>
+      <!--Loading navbar using jquery -->
+      <div id="navbar-placeholder">  </div>
+    </header>
 
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      
-    </div>
-  </nav>
-    <div class="jumbotron">
-      <div class="container">
-
-      <h1>The Code Nut </h1>
-      <H2>A beginner's blog to beginner's problems.</h2> 
-    </div>
-
-    </div>
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-3" id="under-jumbotron">
-        <h3><a href="">Beginner's guide to having your website appear in Google search</a></h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        <p><img src="http://budgetstockphoto.com/bamers/stock_photo_spectrum.jpg" class="img-responsive"/></p>              
+    <main>
+      <div id="index-banner" class="section no-pad-bot">
+        <div id="content" class="container">
+          <h1 class="header">Hi,</h1>
+          <p class="flow-text">
+            I've decided to create a site with simple tutorials ranging from <span class="emphasize">Java, Javascript,
+            HTML, CSS, JQuery, and swift</span>, or <span class="emphasize">cheat sheets</span> on multiple subjects that
+            I've took in university. They could help you brush up on your current skills, or refresh some topics for job
+            interviews. Feel free to explore, as I will be adding tutorials and cheat sheets regularly!
+          </p>
+          <a id="javaCheatSheet" href="#add-group" class="waves-effect btn-large modal-trigger">
+            <i class="material-icons left">add</i>Learn More
+          </a>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <h3><a href="">Understanding and Using Node</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-3">
-        <h3><a href="">Beginner's guide to Alamofire</a></h3> 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-</body>
+
+      <div id="java-cheatsheet-placeholder"> </div>
+
+    </main>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+  </body>
 </html>
