@@ -36,6 +36,24 @@ main {
     width: 110px;
 }
 
+.java-inline-header {
+    display: inline;
+}
+
+#note-aside {
+    font-weight: 300;
+}
+
+.java-lists > li {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+.code-snippet {
+    background-color: #ffe8e6;
+    font-family: monospace;
+}
+
 
 .homepage-cards {
     text-align: center;
