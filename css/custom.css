@@ -87,6 +87,7 @@ nav {
 
 nav .brand-logo {
     font-size: 3rem;
+    font-weight: bold;
 }
 
 nav ul a {
@@ -132,6 +133,17 @@ nav ul a:hover {
         padding: 0px;
     }
 }
+
+#hi-blurb {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-size: 2rem;
+}
+
+#homepage-blurb {
+    margin-top:0px;
+    padding-top: 10px;
+}
 /*END HOME PAGE*/
 
 /*PRETTYPRINT CUSTOMIZATION*/
@@ -141,3 +153,12 @@ pre.prettyprint {
     background-color: #ffe8e6;
 }
 /*END PRETTYPRINT*/
+
+.example-chip {
+    background-color: #ff5252;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 10px;
+    height:20px;
+    line-height:21px;
+}
