@@ -167,10 +167,12 @@ nav ul a:hover {
 
 /*PRETTYPRINT CUSTOMIZATION*/
 pre.prettyprint {
-    padding: 2px;
+    padding: 10px !important;
     border: 1px solid #888;
     background-color: #ffe8e6;
+    border-radius: 7px;
 }
+
 /*END PRETTYPRINT*/
 
 .example-chip {
@@ -180,4 +182,5 @@ pre.prettyprint {
     font-size: 10px;
     height:20px;
     line-height:21px;
+    opacity:0.8;
 }
