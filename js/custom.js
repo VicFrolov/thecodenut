@@ -1,5 +1,5 @@
 $(document).ready (function () {
-	var toggleColorNotVisible = "rgb(0, 0, 0)";
+	var toggleColorNotVisible = "rgb(33, 150, 243)";
     var toggleColorVisible = "rgb(0, 0, 0)";
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;

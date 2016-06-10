@@ -9,13 +9,7 @@ main {
     flex: 1 0 auto;
 }
 
-#content ul li {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
 /*GENERAL TEXT MANIPULATION*/
-
 .emphasize {
     font-weight: bold;
 
@@ -23,8 +17,8 @@ main {
 
 .answer {
     font-weight: bold;
-    color: #000000;
-    background-color: #000000;
+    color: #2196f3;
+    background-color: #2196f3;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -55,7 +49,6 @@ main {
 /*END GENERAL TEXT MANIPULATION*/
 
 /*NAVBAR STUFF*/
-
 /*padding on bigger screens for logo and list to be pushed towards middle*/
 @media screen and (min-width: 993px) {
     nav ul {
@@ -137,3 +130,11 @@ nav ul a:hover {
     }
 }
 /*END HOME PAGE*/
+
+/*PRETTYPRINT CUSTOMIZATION*/
+pre.prettyprint {
+    padding: 2px;
+    border: 1px solid #888;
+    background-color: #ffe8e6;
+}
+/*END PRETTYPRINT*/
