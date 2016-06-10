@@ -1,6 +1,6 @@
 $(document).ready (function () {
 	var toggleColorNotVisible = "rgb(33, 150, 243)";
-    var toggleColorVisible = "rgb(0, 0, 0)";
+    var toggleColorVisible = "rgb(33, 150, 243)";
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
 
@@ -18,7 +18,7 @@ $(document).ready (function () {
 
     $(document).on('click', '#keywordButton', function () {
         if (showAnswersButton) {
-            $(this).val("Show Answers");
+            $(this).text("Show");
             $(".answer").css("color", toggleColorNotVisible);
             $(".answer").css("background-color", toggleColorNotVisible);
             $(".answer").each(function () {
@@ -26,7 +26,7 @@ $(document).ready (function () {
             });
 
         } else {
-            $(this).val("Hide Answers");
+            $(this).text("Hide");
             $(".answer").css("color", toggleColorVisible);
             $(".answer").css("background-color", backgroundColorVisible);
             $(".answer").each(function () {
