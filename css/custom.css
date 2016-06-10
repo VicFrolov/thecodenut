@@ -119,4 +119,19 @@ nav ul a:hover {
     color: #ffffff;
 }
 
+.card-panel {
+    margin-top: 7%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
+@media (max-width: 630px) {
+    .card-panel {
+        margin-top: 10%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .row .col {
+        padding: 0px;
+    }
+}
