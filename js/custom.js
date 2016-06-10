@@ -52,7 +52,7 @@ $(document).ready (function () {
 
     $("#javaCheatSheet").on('click', function () {
         $("#java-cheatsheet-placeholder").load("../java-cheatsheet/javaSummary2.html");
-        $("#index-banner").hide();
+        $("#index-banner-splash").hide();
     });
 
 });

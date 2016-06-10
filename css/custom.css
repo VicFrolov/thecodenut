@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #eeeeee;
 }
 
 main {
@@ -61,7 +62,7 @@ main {
         padding-right: 15%;
     }
     nav .brand-logo #brand-logo-prefix {
-        padding-left: 42%;
+        padding-left: 49%;
         font-size: 10px;
         margin-right: -10px;
         line-height: 10px;
@@ -81,6 +82,10 @@ main {
 .brand-logo {
     font-family: 'Lato', Helvetica, sans-serif;
     letter-spacing: 5px;
+}
+
+nav {
+    position:fixed;
 }
 
 nav .brand-logo {
@@ -104,5 +109,14 @@ nav ul a:hover {
 .side-nav a {
     color: #ffffff;
 }
-
 /*END NAVBAR STUFF*/
+
+/*LOADING PAGE*/
+#index-banner-splash {
+    background-color: #ff5252;
+    max-height: 400px;
+    margin-top:20px;
+    color: #ffffff;
+}
+
+
