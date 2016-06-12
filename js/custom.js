@@ -50,9 +50,18 @@ $(document).ready (function () {
         this.hideAnswers = !this.hideAnswers;      
     });
 
+    $(document).on('click', 'li', function (){
+        $('.collapsible').collapsible();
+    })
+
     $("#javaCheatSheet").on('click', function () {
         $("#java-cheatsheet-placeholder").load("../java-cheatsheet/javaSummary2.html");
         $("#index-banner-splash").hide();
     });
+
+    $("#javaQuestions").on('click', function () {
+        $("#java-questions-placeholder").load("../java-questions/javaQuestions.html");
+        $("#index-banner-splash").hide();
+    });    
 
 });

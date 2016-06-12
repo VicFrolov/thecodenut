@@ -1,0 +1,53 @@
+<div class="row" id="javaDiv">
+  <div class="col s12 m12 l12">
+    <div class="card-panel white">
+      <h1>Java Interview Questions </h1>
+
+      <h3> Intro </h3>
+        <p> I thought it'd be nice to have a bank of Java interview questions and answers. Most of these questions were 
+          found online, and there are many ways to answer the questions below. Feel free to comment or send a message
+          if you think of a better way!</p>
+
+      <h3> Strings </h3>
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header">Method that checks if string is a Palindrome.</div>
+            <div class="collapsible-body"><pre class="prettyprint">public static boolean isPalindrome(String s) {
+    int inputLength = s.length();
+
+    if (!(inputLength > 0 && s instanceof String && s != null)) {
+        return false;
+    }
+    for (int i = 0; i < inputLength / 2; i += 1) {
+        if (s.toLowerCase().charAt(i) != s.toLowerCase().charAt(inputLength - 1 - i)) {
+          return false;
+        }
+    }
+    return true;
+}</pre></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Method that checks if string1 is a rotation of string2.</div>
+            <div class="collapsible-body">
+              <pre class="prettyprint">public static boolean isRotated(String s1, String s2) {
+    if (s1 == null || s2 == null) {
+        return false;
+    }
+    return (s1.length() == s2.length() && s1.concat(s1).contains(s2));  
+}</pre></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Method that reverses a string.</div>
+            <div class="collapsible-body"><pre class="prettyprint">public static String reverseString(String s) {
+    if (s == null) {
+        throw new IllegalArgumentException("can't be null");
+    }
+    StringBuilder sb = new StringBuilder(s);
+    return sb.reverse().toString();
+}</pre></div>
+          </li>
+        </ul>
+
+    </div>
+  </div>
+</div>
