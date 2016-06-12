@@ -69,6 +69,11 @@ main {
 .btn, .btn-large {
     color: #0089ec;
 }
+
+.table-header {
+    font-weight: bold;
+}
+
 /*END GENERAL TEXT MANIPULATION*/
 
 /*NAVBAR STUFF*/
@@ -141,6 +146,10 @@ nav ul a:hover {
     margin-top: 7%;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#types-table {
+    margin-bottom:20px;
 }
 
 @media (max-width: 630px) {

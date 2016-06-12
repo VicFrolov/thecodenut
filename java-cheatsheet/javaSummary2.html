@@ -27,14 +27,15 @@
             packages for functionality such as input/output, networking, graphics, user-interface creation, security, 
             and much more. (Source page 2 java in a nutshell) </p>
 
+
       <h3> Types </h3>
         <p>Java has eight primitive types: </p>
         <table class="striped">
           <thead>
             <tr>
-                <th data-field="id">Type</th>
-                <th data-field="name">Bit Depth (bits)</th>
-                <th data-field="price">Value Range</th>
+                <th data-field="type">Type</th>
+                <th data-field="bits">Bit Depth (bits)</th>
+                <th data-field="value-range">Value Range</th>
             </tr>
           </thead>
 
@@ -84,7 +85,7 @@
         </table>
 
         <p>Notice how all the primitive numbers are signed, and are bounded by -2<sup>n</sup> to 2<sup>n</sup> -1,
-          where n is the number of bits </p>
+          where n is the number of bits.</p>
         
         <h4> Strings </h4>
         <p>In Java, Strings are a sequence of characters. They are objects, and the String class provides many methods
@@ -117,11 +118,11 @@
           </li>
         </ul>
 
-        <p><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">Click Here </a> to see all of them by seeing the official documentation</p>
+        <p><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">Click Here </a> to see all of them by seeing the official documentation.</p>
 
         <h5>String vs StringBuffer vs StringReader </h5>
-        <p>Since Strings are immutable, it could be more efficient to use StringBuilder/StringBuffer (which are 
-          mutable. As of Java 5.0, you should use StringBuilder instead of StringBuffer, unless you need your String manipulations to be threadsafe. I'd argue that only when dealing with big data would this be necessary, and to usually just use String. Since StringBuilder is mutable, there are some methods that could be of use, like:</p>
+          <p>Since Strings are immutable, it could be more efficient to use StringBuilder/StringBuffer (which are 
+            mutable. As of Java 5.0, you should use StringBuilder instead of StringBuffer, unless you need your String manipulations to be threadsafe. I'd argue that only when dealing with big data would this be necessary, and to usually just use String. Since StringBuilder is mutable, there are some methods that could be of use, like:</p>
 
           <ul class="java-lists">
             <li>StringBuilder delete(int start, int end)</li>
@@ -129,6 +130,51 @@
             <li>StringBuilder replace(int start, int end, String s)</li>
             <li>void setCharAt(int index, char ch)</li>
           </ul>
+
+          <p>Below is a simple table to distinguish the differences between the three:</p>
+
+          <table class="striped" id="types-table">
+            <thead>
+              <tr>
+                  <th data-field="s-blank"></th>
+                  <th data-field="s-standard">String</th>
+                  <th data-field="sbuffer">StringBuffer</th>
+                  <th data-field="sbuilder">StringBuilder</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><span class="table-header">Storage Area</span> </td>
+                <td>Constant String Pool</td>
+                <td>Heap</td>
+                <td>Heap</td>
+              </tr>
+              <tr>
+                <td><span class="table-header">Modifiable</span> </td>
+                <td>Immutable</td>
+                <td>Mutable</td>
+                <td>Mutable</td>
+              </tr>
+              <tr>
+                <td><span class="table-header">Thread Safe</span> </td>              
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><span class="table-header">Performance</span> </td>              
+                <td>Fast</td>
+                <td>"Very" Slow</td>
+                <td>Fast</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+
+
 
       <h3 class="java-inline-header">Inheritance </h3><h5 class="java-inline-header"> (subclass) vs </h5> 
         <h3 class="java-inline-header">Polymorphism </h3> <h5 class="java-inline-header">(subtype)</h5>
@@ -151,7 +197,7 @@
 
         <p><strong>Polymorphism</strong></p>
           <ul class="java-lists">
-            <li>Literaly translate to <span class="answer">having many forms</span>.</li>
+            <li>Literally translate to <span class="answer">having many forms</span>.</li>
             <li>When you define a supertype for a group of classes, <strong> any subclass of that supertype can be 
               substituted where the supertype is expected</strong>.</li>
             <li>Can be considered a subclass.</li>
