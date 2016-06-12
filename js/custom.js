@@ -52,16 +52,16 @@ $(document).ready (function () {
 
     $(document).on('click', 'li', function (){
         $('.collapsible').collapsible();
-    })
+    });
 
     $("#javaCheatSheet").on('click', function () {
+        $("#index-banner-splash").fadeOut("fast");
         $("#java-cheatsheet-placeholder").load("../java-cheatsheet/javaSummary2.html");
-        $("#index-banner-splash").hide();
     });
 
     $("#javaQuestions").on('click', function () {
+        $("#index-banner-splash").fadeOut("fast");
         $("#java-questions-placeholder").load("../java-questions/javaQuestions.html");
-        $("#index-banner-splash").hide();
     });    
 
 });

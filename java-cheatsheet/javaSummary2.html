@@ -9,8 +9,9 @@
           followed by bullet points with what I believe to be the key ideas. It is assumed the reader is familiar with
           these concepts, as the purpose is to refresh the mind of the reader rather than teach them new material. </p>
 
-        <p id="note-aside"> Note: To help with remembering, some keywords will be hidden. Simply click or tap the box to reveal the
-          important keyword(s). Disable/Enable all the hidden words by tapping the button at the top right. </p>
+        <p id="note-aside"> Note: To help with remembering, some keywords will be hidden. Simply click or tap the box 
+        to reveal the important keyword(s). Disable/Enable all the hidden words by tapping the button at the top right. 
+        </p>
 
 
         <div class="chip example-chip">Example</div>
@@ -25,6 +26,109 @@
             platform. Java classes are organized into related groups known as packages. The Java platform defines 
             packages for functionality such as input/output, networking, graphics, user-interface creation, security, 
             and much more. (Source page 2 java in a nutshell) </p>
+
+      <h3> Types </h3>
+        <p>Java has eight primitive types: </p>
+        <table class="striped">
+          <thead>
+            <tr>
+                <th data-field="id">Type</th>
+                <th data-field="name">Bit Depth (bits)</th>
+                <th data-field="price">Value Range</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>byte</td>
+              <td>8</td>
+              <td>-128 to 127</td>
+            </tr>
+            <tr>
+              <td>short</td>
+              <td>16</td>
+              <td>-32,768 to 32767</td>
+            </tr>
+            <tr>
+              <td>int</td>
+              <td>32</td>
+              <td>~ +/- 2.1 Million</td>
+            </tr>
+            <tr>
+              <td>long</td>
+              <td>64</td>
+              <td>-2<sup>63</sup> to 2<sup>63</sup> -1</td>
+            </tr>
+            <tr>
+              <td>float</td>
+              <td>32</td>
+              <td>varies</td>
+            </tr>
+            <tr>
+              <td>double</td>
+              <td>64</td>
+              <td>varies</td>
+            </tr>
+            <tr>
+              <td>char</td>
+              <td>16</td>
+              <td>0 to 65,535</td>
+            </tr>
+            <tr>
+              <td>boolean</td>
+              <td>jvm-specific</td>
+              <td>true or false</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <p>Notice how all the primitive numbers are signed, and are bounded by -2<sup>n</sup> to 2<sup>n</sup> -1,
+          where n is the number of bits </p>
+        
+        <h4> Strings </h4>
+        <p>In Java, Strings are a sequence of characters. They are objects, and the String class provides many methods
+          to manipulate them.</p>
+
+        <ul class="java-lists">
+          <li>Strings in Java are <span class="answer">immutable</span> for:
+            <ul class="java-lists">
+              <li>Security reasons.</li>
+              <li>Synchronization.</li>
+              <li>Caching.</li>
+              <li>Class Loading.</li>
+            </ul>
+          </li>
+          <li>Java provides the String class, to allow for:
+            <ul>
+              <li>String concatenation: <pre class="prettyprint">String str = str1.concat(str2);</pre></li>
+              <li>String subString: <pre class="prettyprint">String subOfS1 = str1.length(int start, int end);</pre></li>
+              <li>String formatting: <pre class="prettyprint">String str = String.format("Hello %s", "Batman");</pre></li>
+              <li>And many more methods, such as:
+                <ul class="java-lists">
+                  <li>charAt(int index)</li>
+                  <li>contains(CharSequence s)</li>
+                  <li>equals(Object object)</li>
+                  <li>indexOf([many options])</li>
+                  <li>isEmpty()</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">Click Here </a> to see all of them by seeing the official documentation</p>
+
+        <h5>String vs StringBuffer vs StringReader </h5>
+        <p>Since Strings are immutable, it could be more efficient to use StringBuilder/StringBuffer (which are 
+          mutable. As of Java 5.0, you should use StringBuilder instead of StringBuffer, unless you need your String manipulations to be threadsafe. I'd argue that only when dealing with big data would this be necessary, and to usually just use String. Since StringBuilder is mutable, there are some methods that could be of use, like:</p>
+
+          <ul class="java-lists">
+            <li>StringBuilder delete(int start, int end)</li>
+            <li>StringBuilder reverse()</li>
+            <li>StringBuilder replace(int start, int end, String s)</li>
+            <li>void setCharAt(int index, char ch)</li>
+          </ul>
 
       <h3 class="java-inline-header">Inheritance </h3><h5 class="java-inline-header"> (subclass) vs </h5> 
         <h3 class="java-inline-header">Polymorphism </h3> <h5 class="java-inline-header">(subtype)</h5>
