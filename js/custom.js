@@ -4,6 +4,17 @@ $(document).ready (function () {
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
 
+    var fadeIn = function (pageLocation, content) {
+        
+        $(pageLocation).fadeOut(100, function() {
+            $(pageLocation).load(content)
+            setTimeout(function() {
+                $(pageLocation).fadeIn('slow');
+                window.scrollTo(0, 0); 
+            }, 1);
+        });
+    }
+
     // var loadNavbar = function () {
     //     $.ajax({
     //         url: "../navbar/navbar.html", 
@@ -58,19 +69,17 @@ $(document).ready (function () {
         $('.collapsible').collapsible();
     });
 
+
     $("#pageContent").on('click', '#javaCheatSheet', function () {
-        $("#pageContent").load("../java-cheatsheet/javaSummary2.html");
-        window.scrollTo(0, 0);
+        fadeIn("#pageContent", "../java-cheatsheet/javaSummary2.html");
     });
 
     $("#pageContent").on('click', '#javaQuestions', function () {
-        $("#pageContent").load("../java-questions/javaQuestions.html");
-        window.scrollTo(0, 0);
+        fadeIn("#pageContent", "../java-questions/javaQuestions.html");
     });
 
     $("#navbar-placeholder").on('click', '#home', function () {
-        $("#pageContent").load("../home-page/homePage.html");
-        window.scrollTo(0, 0);
+        fadeIn("#pageContent", "../home-page/homePage.html");
     });   
 
 });
