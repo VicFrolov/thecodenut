@@ -4,17 +4,21 @@ $(document).ready (function () {
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
 
-    var loadNavbar = function () {
-        $.ajax({
-            url: "../navbar/navbar.html", 
-            success: function(data) {
-                $("#navbar-placeholder").html(data);
-                $(".button-collapse").sideNav();
-            }
-        });
-    };
+    // var loadNavbar = function () {
+    //     $.ajax({
+    //         url: "../navbar/navbar.html", 
+    //         success: function(data) {
+    //             $("#navbar-placeholder").html(data);
+    //             $(".button-collapse").sideNav();
+    //         }
+    //     });
+    // };
 
-    loadNavbar();
+    // loadNavbar();
+
+    $("#navbar-placeholder").load("../navbar/navbar.html")
+
+    $("#pageContent").load('home-page/homePage.html');
 
     $(document).on('click', '#keywordButton', function () {
         if (showAnswersButton) {
@@ -54,14 +58,19 @@ $(document).ready (function () {
         $('.collapsible').collapsible();
     });
 
-    $("#javaCheatSheet").on('click', function () {
-        $("#index-banner-splash").fadeOut("fast");
-        $("#java-cheatsheet-placeholder").load("../java-cheatsheet/javaSummary2.html");
+    $("#pageContent").on('click', '#javaCheatSheet', function () {
+        $("#pageContent").load("../java-cheatsheet/javaSummary2.html");
+        window.scrollTo(0, 0);
     });
 
-    $("#javaQuestions").on('click', function () {
-        $("#index-banner-splash").fadeOut("fast");
-        $("#java-questions-placeholder").load("../java-questions/javaQuestions.html");
-    });    
+    $("#pageContent").on('click', '#javaQuestions', function () {
+        $("#pageContent").load("../java-questions/javaQuestions.html");
+        window.scrollTo(0, 0);
+    });
+
+    $("#navbar-placeholder").on('click', '#home', function () {
+        $("#pageContent").load("../home-page/homePage.html");
+        window.scrollTo(0, 0);
+    });   
 
 });
