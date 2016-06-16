@@ -12,7 +12,6 @@ $(function () {
     var currentPage = "";
 
     var writeComment = function (userName, newComment, time) {
-        console.log('comments/' + currentPage + '/');
         database.ref('comments/' + currentPage + '/').push({
             userName: userName,
             comment: newComment,
@@ -22,9 +21,14 @@ $(function () {
 
     var showComments = function (json) {
         var html = '';
-        $.each(json, function() {
-            html += '<div>' + this.userName + '<br>' + this.comment + '<br>' + this.timeStamp + '</div>';
-        });
+        //make sure there's something there
+        if (json) {
+            $.each(json, function() {
+                html += '<div>' + this.userName + '<br>' + this.comment + '<br>' + this.timeStamp + '</div>';
+            });
+        } else {
+            html += '<div> No comments posted, yet....';
+        }
         $("#comments-section").html(html);
     };
 
@@ -42,10 +46,19 @@ $(function () {
         }
     });
 
-    $(document).on('click', '#javaQuestions', function() {
+    $(document).on('click', '#interview-questions', function() {
         currentPage = this.id;
         currentCommentSection = commentsRef.child(currentPage);
-        commentsRef.orderByPriority().on('value', function(snapshot) {
+        currentCommentSection.orderByPriority().on('value', function(snapshot) {
+            var comments = snapshot.val();
+            showComments(comments);
+        });
+    });
+
+    $(document).on('click', '#java-cheatsheet', function() {
+        currentPage = this.id;
+        currentCommentSection = commentsRef.child(currentPage);
+        currentCommentSection.orderByPriority().on('value', function(snapshot) {
             var comments = snapshot.val();
             showComments(comments);
         });

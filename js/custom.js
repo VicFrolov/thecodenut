@@ -68,12 +68,12 @@ $(function () {
         $('.collapsible').collapsible();
     });
 
-    $("#pageContent").on('click', '#javaCheatSheet', function () {
+    $("#pageContent").on('click', '#java-cheatsheet', function () {
         fadeIn("#pageContent", "../java-cheatsheet/javaSummary2.html", 50, true);
         fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
     });
 
-    $("#pageContent").on('click', '#javaQuestions', function () {
+    $("#pageContent").on('click', '#interview-questions', function () {
         fadeIn("#pageContent", "../java-questions/javaQuestions.html", 50, true);
         fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
     });
