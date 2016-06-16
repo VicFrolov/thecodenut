@@ -4,20 +4,19 @@ $(document).ready (function () {
     var backgroundColorVisible = "rgb(255, 255, 255)";
     var showAnswersButton = false;
 
-    var fadeIn = function (pageLocation, content) {
-        
+    var fadeIn = function (pageLocation, content, timeOut) {
         $(pageLocation).fadeOut(100, function() {
-            $(pageLocation).load(content)
+            $(pageLocation).load(content);
             setTimeout(function() {
                 $(pageLocation).fadeIn('slow');
-                window.scrollTo(0, 0); 
-            }, 1);
+                window.scrollTo(0, 0);
+            }, timeOut);
         });
-    }
+    };
 
     // var loadNavbar = function () {
     //     $.ajax({
-    //         url: "../navbar/navbar.html", 
+    //         url: "../navbar/navbar.html",
     //         success: function(data) {
     //             $("#navbar-placeholder").html(data);
     //             $(".button-collapse").sideNav();
@@ -25,13 +24,13 @@ $(document).ready (function () {
     //     });
     // };
 
-    // loadNavbar();
+    //load navbar and pageContent immediately
+    $("#navbar-placeholder").load("../navbar/navbar.html");
+    fadeIn("#pageContent", "../home-page/homePage.html");
 
-    $("#navbar-placeholder").load("../navbar/navbar.html")
 
-    $("#pageContent").load('home-page/homePage.html');
-
-    $(document).on('click', '#keywordButton', function () {
+    //shows/hides all answers
+    $("#pageContent").on('click', '#keywordButton', function () {
         if (showAnswersButton) {
             $(this).text("Show");
             $(".answer").css("color", toggleColorNotVisible);
@@ -48,10 +47,11 @@ $(document).ready (function () {
                 this.hideAnswers = true;
             });
         }
-        showAnswersButton = !showAnswersButton;        
+        showAnswersButton = !showAnswersButton;
     });
 
-    $(document).on('click', '.answer', function () {
+    //shows/hides specific answer
+    $("#pageContent").on('click', '.answer', function () {
         this.hideAnswers = this.hideAnswers || false;
 
         if (this.hideAnswers) {
@@ -62,24 +62,26 @@ $(document).ready (function () {
             $(this).css("background-color", backgroundColorVisible);
 
         }
-        this.hideAnswers = !this.hideAnswers;      
+        this.hideAnswers = !this.hideAnswers;
     });
 
     $(document).on('click', 'li', function (){
         $('.collapsible').collapsible();
     });
 
-
     $("#pageContent").on('click', '#javaCheatSheet', function () {
-        fadeIn("#pageContent", "../java-cheatsheet/javaSummary2.html");
+        fadeIn("#pageContent", "../java-cheatsheet/javaSummary2.html", 50);
+				fadeIn("#commentsContent", "../comments/comment-section.html", 500);
     });
 
     $("#pageContent").on('click', '#javaQuestions', function () {
-        fadeIn("#pageContent", "../java-questions/javaQuestions.html");
+        fadeIn("#pageContent", "../java-questions/javaQuestions.html", 50);
+				fadeIn("#commentsContent", "../comments/comment-section.html", 500);
     });
 
     $("#navbar-placeholder").on('click', '#home', function () {
-        fadeIn("#pageContent", "../home-page/homePage.html");
-    });   
+        fadeIn("#pageContent", "../home-page/homePage.html", 50);
+				$("#commentsContent").hide();
+    });
 
 });
