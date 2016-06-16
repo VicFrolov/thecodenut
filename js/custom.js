@@ -73,10 +73,9 @@ $(function () {
         fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
     });
 
-    $("#pageContent").on('click', '#javaQuestions', function (e) {
+    $("#pageContent").on('click', '#javaQuestions', function () {
         fadeIn("#pageContent", "../java-questions/javaQuestions.html", 50, true);
         fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
-        showJavaQComments();
     });
 
     $("#navbar-placeholder").on('click', '#home', function () {

@@ -1,4 +1,4 @@
-var showJavaQComments = function() {
+$(function () {
     var config = {
         apiKey: "AIzaSyDiELrcysQjtMGCBYZj9p-9R-3n4mIobIg",
         authDomain: "the-code-nut.firebaseapp.com",
@@ -8,17 +8,27 @@ var showJavaQComments = function() {
 
     firebase.initializeApp(config);
     var database = firebase.database();
-    var commentsRef = database.ref('comments/')
+    var commentsRef = database.ref('comments/');
+    var currentPage = "";
 
     var writeComment = function (userName, newComment, time) {
-        database.ref('comments/').push({
+        console.log('comments/' + currentPage + '/');
+        database.ref('comments/' + currentPage + '/').push({
             userName: userName,
             comment: newComment,
             timeStamp: time
         });
-    }
+    };
 
-    $("#commentsContent").on("click", "#javaQaddComment", function() {
+    var showComments = function (json) {
+        var html = '';
+        $.each(json, function() {
+            html += '<div>' + this.userName + '<br>' + this.comment + '<br>' + this.timeStamp + '</div>';
+        });
+        $("#comments-section").html(html);
+    };
+
+    $(document).on('click', '#addComment', function() {
         var username = $("#usernameInput").val();
         var newComment = $("#commentInput").val();
         var time = timeStamp();
@@ -32,21 +42,16 @@ var showJavaQComments = function() {
         }
     });
 
-    var showComments = function (jsonss) {
-        var html = '';
-        $.each(json, function () {
-            html += '<div>' + this.userName + '<br>' + this.comment + '<br>' + this.timeStamp + '</div>';
+    $(document).on('click', '#javaQuestions', function() {
+        currentPage = this.id;
+        currentCommentSection = commentsRef.child(currentPage);
+        commentsRef.orderByPriority().on('value', function(snapshot) {
+            var comments = snapshot.val();
+            showComments(comments);
         });
-        $("#javaQcomments-section").html(html);
-    }
-
-    commentsRef.orderByPriority().on('value', function(snapshot) {
-        var comments = snapshot.val();
-        showComments(comments);
     });
 
-
-    // Thanks to https://gist.github.com/hurjas/2660489#file-timestamp-js-L26
+        // Thanks to https://gist.github.com/hurjas/2660489#file-timestamp-js-L26
     function timeStamp() {
         var now = new Date();
         var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
@@ -59,7 +64,6 @@ var showJavaQComments = function() {
               time[i] = "0" + time[i];
             }
         }
-
         return date.join("/") + ", " + time.join(":") + " " + suffix;
-      }
-};
+    }
+});
