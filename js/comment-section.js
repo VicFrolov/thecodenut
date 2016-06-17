@@ -23,7 +23,7 @@ $(function () {
         var html = '';
         //make sure there's something there
         if (json) {
-            $.each(json, function() {
+            $.each(json, function () {
                 html += '<div>' + this.userName + '<br>' + this.comment + '<br>' + this.timeStamp + '</div>';
             });
         } else {
@@ -32,7 +32,7 @@ $(function () {
         $("#comments-section").html(html);
     };
 
-    $("main").on('click', '#addComment', function(e) {
+    $("main").on('click', '#addComment', function (e) {
         e.preventDefault();
         var username = $("#usernameInput").val();
         var newComment = $("#commentInput").val();
@@ -47,39 +47,29 @@ $(function () {
         }
     });
 
-    $("main").on('click', '#interview-questions', function(e) {
+    $("main").on('click', '#interview-questions', function (e) {
         e.preventDefault();
         currentPage = this.id;
         currentCommentSection = commentsRef.child(currentPage);
-        currentCommentSection.orderByPriority().on('value', function(snapshot) {
+        currentCommentSection.orderByPriority().on('value', function (snapshot) {
             var comments = snapshot.val();
             showComments(comments);
         });
     });
 
-    $("main").on('click', '#java-cheatsheet', function(e) {
+    $("main").on('click', '#java-cheatsheet', function (e) {
         e.preventDefault();
         currentPage = this.id;
         currentCommentSection = commentsRef.child(currentPage);
-        currentCommentSection.orderByPriority().on('value', function(snapshot) {
+        currentCommentSection.orderByPriority().on('value', function (snapshot) {
             var comments = snapshot.val();
             showComments(comments);
         });
     });
 
-    // Thanks to https://gist.github.com/hurjas/2660489#file-timestamp-js-L26
-    function timeStamp() {
+    var timeStamp = function () {
         var now = new Date();
-        var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
-        var time = [now.getHours(), now.getMinutes()];
-        var suffix = (time[0] < 12) ? "AM" : "PM";
-        time[0] = (time[0] < 12) ? time[0] : time[0] - 12;
+        return now.toLocaleString().replace(/:\d{2}\s/,' ');
+    };
 
-        for (var i = 1; i < 3; i++) {
-            if (time[i] < 10) {
-              time[i] = "0" + time[i];
-            }
-        }
-        return date.join("/") + ", " + time.join(":") + " " + suffix;
-    }
 });

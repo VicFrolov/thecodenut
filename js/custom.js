@@ -5,9 +5,9 @@ $(function () {
     var showAnswersButton = false;
 
     var fadeIn = function (pageLocation, content, timeOut, scrollToTop) {
-        $(pageLocation).fadeOut(timeOut, function() {
+        $(pageLocation).fadeOut(timeOut, function () {
             $(pageLocation).load(content);
-            setTimeout(function() {
+            setTimeout(function () {
                 $(pageLocation).fadeIn('slow');
                 if (scrollToTop) {
                     window.scrollTo(0, 0);
@@ -66,7 +66,7 @@ $(function () {
         this.hideAnswers = !this.hideAnswers;
     });
 
-    $("main").on("click","#pageContent li", function(e){
+    $("main").on("click","#pageContent li", function (e){
         e.preventDefault();
         $('.collapsible').collapsible();
     });
