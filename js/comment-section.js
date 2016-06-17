@@ -32,7 +32,8 @@ $(function () {
         $("#comments-section").html(html);
     };
 
-    $(document).on('click', '#addComment', function() {
+    $("main").on('click', '#addComment', function(e) {
+        e.preventDefault();
         var username = $("#usernameInput").val();
         var newComment = $("#commentInput").val();
         var time = timeStamp();
@@ -46,7 +47,8 @@ $(function () {
         }
     });
 
-    $(document).on('click', '#interview-questions', function() {
+    $("main").on('click', '#interview-questions', function(e) {
+        e.preventDefault();
         currentPage = this.id;
         currentCommentSection = commentsRef.child(currentPage);
         currentCommentSection.orderByPriority().on('value', function(snapshot) {
@@ -55,7 +57,8 @@ $(function () {
         });
     });
 
-    $(document).on('click', '#java-cheatsheet', function() {
+    $("main").on('click', '#java-cheatsheet', function(e) {
+        e.preventDefault();
         currentPage = this.id;
         currentCommentSection = commentsRef.child(currentPage);
         currentCommentSection.orderByPriority().on('value', function(snapshot) {
@@ -64,7 +67,7 @@ $(function () {
         });
     });
 
-        // Thanks to https://gist.github.com/hurjas/2660489#file-timestamp-js-L26
+    // Thanks to https://gist.github.com/hurjas/2660489#file-timestamp-js-L26
     function timeStamp() {
         var now = new Date();
         var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];

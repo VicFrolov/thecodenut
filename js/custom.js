@@ -31,7 +31,8 @@ $(function () {
     fadeIn("#pageContent", "../home-page/homePage.html");
 
     //shows/hides all answers
-    $("#pageContent").on('click', '#keywordButton', function () {
+    $("#pageContent").on('click', '#keywordButton', function (e) {
+        e.preventDefault();
         if (showAnswersButton) {
             $(this).text("Show");
             $(".answer").css("color", toggleColorNotVisible);
@@ -52,7 +53,8 @@ $(function () {
     });
 
     //shows/hides specific answer
-    $("#pageContent").on('click', '.answer', function () {
+    $("#pageContent").on('click', '.answer', function (e) {
+        e.preventDefault();
         this.hideAnswers = this.hideAnswers || false;
         if (this.hideAnswers) {
             $(this).css("color", toggleColorNotVisible);
@@ -64,23 +66,27 @@ $(function () {
         this.hideAnswers = !this.hideAnswers;
     });
 
-    $(document).on("click","#pageContent li",function(){
+    $("main").on("click","#pageContent li", function(e){
+        e.preventDefault();
         $('.collapsible').collapsible();
     });
 
-    $("#pageContent").on('click', '#java-cheatsheet', function () {
+    $("#pageContent").on('click', '#java-cheatsheet', function (e) {
+        e.preventDefault();
         fadeIn("#pageContent", "../java-cheatsheet/javaSummary2.html", 50, true);
-        fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
+        fadeIn("#commentsContent", "../comments/comment-section.html", 300, false);
     });
 
-    $("#pageContent").on('click', '#interview-questions', function () {
-        fadeIn("#pageContent", "../java-questions/javaQuestions.html", 50, true);
-        fadeIn("#commentsContent", "../comments/comment-section.html", 500, false);
+    $("#pageContent").on('click', '#interview-questions', function (e) {
+        e.preventDefault();
+        fadeIn("#pageContent", "../java-questions/interviewQuestions.html", 50, true);
+        fadeIn("#commentsContent", "../comments/comment-section.html", 300, false);
     });
 
-    $("#navbar-placeholder").on('click', '#home', function () {
-        fadeIn("#pageContent", "../home-page/homePage.html", 50);
-        $("#commentsContent").hide();
+    $("#navbar-placeholder").on('click', '#home', function (e) {
+        e.preventDefault();
+        fadeIn("#pageContent", "../home-page/homePage.html", 50, false);
+        $("#commentsContent").fadeOut(50);
     });
 
 });
